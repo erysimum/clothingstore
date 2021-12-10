@@ -16,7 +16,7 @@ class Shop extends Component {
     return (
       <div className='collection'>
         {collection.map(({ id, ...otherShopProps }) => (
-          <CollectionPreview key={id} {...otherShopProps} />
+          <CollectionPreview key={id} {...otherShopProps} id={id} />
         ))}
       </div>
     );

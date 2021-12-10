@@ -1,3 +1,2 @@
-const ToggleCartDropDown = 'ToggleCartDropDown';
-
-export default ToggleCartDropDown;
+export const ToggleCartDropDown = 'ToggleCartDropDown';
+export const AddItem = 'AddItem';

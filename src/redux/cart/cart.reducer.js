@@ -1,7 +1,9 @@
-import ToggleCartDropDown from './cart.types';
-
+import { ToggleCartDropDown } from './cart.types';
+import { AddItem } from './cart.types';
+import { itemsAddedToCart } from './cart.utils';
 const INITIALSTATE = {
-  cartHidden: true
+  cartHidden: true,
+  cartItems: []
 };
 
 const cartDropDownReducer = (state = INITIALSTATE, action) => {
@@ -11,6 +13,13 @@ const cartDropDownReducer = (state = INITIALSTATE, action) => {
         ...state,
         cartHidden: !state.cartHidden
       };
+
+    case AddItem:
+      return {
+        ...state,
+        cartItems: itemsAddedToCart(state.cartItems, action.payload)
+      };
+
     default:
       return state;
   }
