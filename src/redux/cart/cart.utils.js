@@ -13,7 +13,6 @@ export const itemsAddedToCart = (lookupCart, itemSelected) => {
     return lookupCart.map((item) => {
       return item.id === itemSelected.id ? { ...item, quantity: item.quantity + 1 } : item;
     });
-    return null;
   }
   return [...lookupCart, { ...itemSelected, quantity: 1 }];
 };
